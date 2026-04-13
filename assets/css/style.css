@@ -353,24 +353,19 @@ a:hover {
     transform: translateY(-1px);
 }
 
-/* Hero portrait placeholder */
+/* Hero portrait */
 .hero-portrait {
     flex-shrink: 0;
 }
 
-.portrait-placeholder {
+.portrait-img {
     width: 260px;
     height: 320px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(45, 90, 123, 0.2), rgba(45, 90, 123, 0.05));
-    border: 1.5px dashed rgba(136, 146, 168, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-hero-muted);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid rgba(58, 124, 165, 0.25);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
 }
 
 /* Scroll indicator */
@@ -849,7 +844,7 @@ a:hover {
         justify-content: center;
     }
 
-    .portrait-placeholder {
+    .portrait-img {
         width: 200px;
         height: 250px;
     }
@@ -925,7 +920,7 @@ a:hover {
         font-size: 2rem;
     }
 
-    .portrait-placeholder {
+    .portrait-img {
         width: 180px;
         height: 220px;
     }
