@@ -1,0 +1,36 @@
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+% Section formatting: small caps, bold, horizontal rule below
+\titleformat{\section}
+  {\large\scshape\bfseries}
+  {}
+  {0em}
+  {}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Fix pandoc + titlesec "no line here to end" conflict
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+% Tight bullet lists
+\setlist[itemize]{noitemsep, topsep=2pt, partopsep=0pt, leftmargin=1.4em}
+
+% No page number
+\pagenumbering{gobble}
+
+% Job entry command: bold title (left) + bold date (right), italic org + italic location
+\newcommand{\job}[4]{%
+  \vspace{2pt}%
+  \noindent\begin{tabularx}{\textwidth}{@{}X r@{}}%
+    \textbf{#1} & \textbf{\small #2} \\
+    \textit{\small #3} & \textit{\small #4}%
+  \end{tabularx}%
+  \vspace{-2pt}%
+}
